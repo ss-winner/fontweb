@@ -1,0 +1,158 @@
+html,body{margin: 0;padding:0;height: 100%;}
+/*body{
+    position: relative;
+}
+html {
+    margin: 0;
+    height: 100%;
+    display: table;
+  }
+  
+  body {
+    margin: 0;
+    display: table-cell;
+    height: 100%;
+  }*/
+.left{
+    width: 85px;
+   float: left;
+   height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(102, 102, 129);
+    
+}
+#lt{
+    width: 85px;
+    position:fixed;
+    top:10px;
+    left: 10px;
+    
+}
+#lb{
+    position:fixed;
+    bottom:10px;
+    left: 20px;
+}
+.leftt{
+    width:200px;
+    height: 100%;
+    background-color: rgb(88, 88, 105);
+    float: left;
+    color: white;
+    font-size: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+.leftt span{
+    color: rgb(201, 201, 192);
+    font-size: 10px;
+    
+}
+.leftt span img{
+    float: right;
+    padding-right: 20px;
+    height: 15px;
+}
+.leftt span,.leftt p{
+    padding-left: 20px;
+}
+.leftt div{
+    margin-top: 30px;
+    border-bottom: 1px solid gray;
+}
+.leftt div:nth-of-type(3),.leftt div:nth-of-type(4){
+    border-bottom:none;
+}
+.leftt p img{
+    float: right;
+    margin-right: 20px;
+    height: 15px;
+}
+.bottom img{
+    width:160px;
+}
+.bottom{
+    position: fixed;
+    bottom: 10px;
+    margin-left: 15PX;
+}
+.left span img{
+    position: fixed;
+    top: 30px;
+    left: -10px;
+}
+.leftt div:nth-of-type(3){
+    position: relative;
+}
+.Active {
+position: absolute;
+top: 25px;
+left: -27px;
+}
+.right{
+    margin-left: 285px;
+    height: 100%;
+    position: relative;
+}
+
+.div1{
+    height: 40px;
+    border-bottom: rgb(235, 233, 233) 1px solid;
+    line-height: 40px;
+}
+.div1 p{
+    margin-left: 10px;
+    vertical-align: middle;
+    
+}
+.div1 img{
+   position: fixed;
+   top: 10px;
+   right: 10px;;
+}
+.div2 div:nth-of-type(1){
+height:60px;
+text-align: center;
+line-height: 60px;
+border-bottom:  rgb(235, 233, 233) 1px solid;
+}
+.div2 div:nth-of-type(8){
+    width: 390px;
+}
+.div2 div:nth-of-type(1) img{
+   
+    vertical-align: middle;
+}
+.div2{
+    width:400px;
+    border-right: rgb(235, 233, 233) 1px solid;
+}
+
+.div3 span img{
+    width: 740px;
+}
+.div3{
+    
+    position: absolute;
+    top: 40px;
+    right: 0;
+  margin-left: 800px;
+   /* height: 100%;
+    margin-top: 40px;
+    float: right;*/
+}
+.r1{
+    height: 61px;
+    line-height: 60px;
+    border-bottom:  rgb(235, 233, 233) 1px solid;
+}
+.r1:nth-child(1){
+    margin-left: 10px;
+}
+.r1 img:nth-of-type(2){
+    margin-left: 300px;
+}
+.r1 img:nth-of-type(3){
+    margin-left: 20px;
+}
