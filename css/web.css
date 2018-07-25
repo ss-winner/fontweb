@@ -1,0 +1,243 @@
+@charset "utf-8";
+body,p,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dt,dd{
+    margin:0;
+    padding:0;
+}
+body{
+    font:12px/24px "Microsoft yahei";
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:inherit;
+}
+.imgv{
+    vertical-align:top; 
+}
+.clearf::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.whole{
+    width:100%;
+    height:1000px;
+}
+.navw{
+    width:380px;
+    height:100%;
+    float: left;
+}
+.icon{
+    width:115px;
+    background-color: rgb(30, 34, 43);
+    height:100%;
+    float:left;
+}
+.icon img{
+   position: fixed;
+}
+.icon1{
+    top:30px;
+    left:20px;
+}
+.icon2{
+    top:120px;
+    left:20px;
+}
+.icon3{
+    top:210px;
+    left:20px;
+}
+.icon4{
+    top:300px;
+    left:20px;
+}
+.icon5{
+    bottom: 30px;
+    left:20px;
+}
+.icon6{
+    bottom: 30px;
+    left:60px;
+}
+.navfont{
+    width:265px;
+    height:100%;
+    float:left;
+    background-color:rgb(46, 52, 68);
+    color:rgba(222, 235, 248, 0.897);
+}
+.navfont dl{
+    width:80%;
+    margin:20px auto;
+    border-bottom: 1px solid rgba(155, 155, 155, 0.13);
+}
+.navfont dl:last-child{
+    border:none;
+}
+.navfont dd{
+    margin-bottom:10px;
+}
+.navfont img{
+    float:right;
+    vertical-align:top;
+}
+.navfont dl dt{
+    margin-bottom:15px;
+    color:rgba(186, 206, 238, 0.37);
+}
+.navfont dd a:hover{
+    color:rgba(246, 247, 248, 0.993);
+    font-weight: bold;
+}
+.content{
+    background-color:white;
+    position: absolute;
+    width:80%;
+    margin-left: 380px;
+    /* float: left; */
+}
+.title{
+    width:100%;
+    font-size:20px;
+    color:rgba(51, 51, 51, 0.897);
+    border-bottom: 1px solid rgba(187, 187, 187, 0.555);
+}
+.tit {
+    padding:25px;
+}
+.photo{
+    width:250px;
+    height:70px;
+    position:fixed;
+    top:10px; 
+    right:5px;
+}
+.content .photo .s{
+    margin:0 0 20px 30px;
+}
+.f{
+    display: inline-block;
+    line-height: 1.5;
+    font-size:16px;
+    margin-left:10px;
+}
+.f p{
+    font-size: 12px;
+    color:rgb(170, 170, 170);
+}
+.section{
+    position: relative;
+}
+.left{
+    width:380px;/*25%*/
+    border-right:1px solid rgba(187, 187, 187, 0.555);
+}
+.content .left .search{
+    width:300px;
+    margin:0 auto;
+    padding:20px 0;
+}
+.content .left .search input{
+    width:300px;
+    height:25px;
+}
+.intro dl{
+    border-top:1px solid rgba(187, 187, 187, 0.555);
+    padding:10px 10px 20px 20px;
+}
+.intro dl:hover{
+    border-left:3px solid rgb(56, 171, 248); 
+}
+.intro dl:hover .f img{
+    display: inline;
+}
+.intro dl:hover h4{
+    color:rgb(56, 171, 248); 
+}
+.intro .f{
+    width:100px;
+}
+.intro .mark{
+    display: inline-block;
+}
+.intro .f img{
+    margin-right:10px;
+    display: none;
+}
+.intro .f h4{
+    display:inline;
+}
+.intro dl dd{
+    line-height: 1.5;
+    color:rgb(105, 105, 105);
+}
+.right{
+    width:75%;
+    position: absolute;
+    top:0;
+    margin-left: 380px;
+}
+.rightnav{
+    border-bottom: 1px solid rgba(187, 187, 187, 0.555);
+}
+.rightnav h3{
+    padding:23px 10px 24px 30px;
+    display: inline-block;
+}
+.rightnav .righticon{
+    display: inline-block;
+    margin-left:55%;
+    border:1px solid rgba(187, 187, 187, 0.555);
+    border-radius: 5px;
+    background-color: rgba(251, 254, 255, 0.795);
+}
+.rightnav .righticon img{
+    vertical-align: center;
+}
+.rightnav .righticon a{
+    padding:5px 7px 5px 7px;
+    border-right:1px solid rgba(187, 187, 187, 0.555);
+}
+.rightnav .righticon img:last-child{
+    border: none;
+}
+.article ul{
+    padding:30px 0 0 30px;
+    border-bottom:1px solid rgba(187, 187, 187, 0.555);
+    position: relative;
+}
+.article ul li{
+    padding-bottom: 30px;
+}
+.article .discribe{
+    display: inline-block;
+    width:85%;
+    line-height: 1.5;
+    padding-left:20px;
+}
+.article .discribe span{
+    margin-right:10px;
+    font-size:14px;
+    font-weight: bold;
+}
+.article .discribe p{
+    margin-top:10px;
+}
+.article ul .day{
+    position: absolute;
+    padding:0;
+    bottom: -10px;
+    left:45%;
+}
+.article ul .day div{
+    width:100px;
+    font-size:12px;
+    line-height: 2;
+    text-align: center;
+    background-color: white;
+    color:rgb(134, 134, 134);
+}

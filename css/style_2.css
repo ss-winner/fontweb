@@ -1,0 +1,28 @@
+body{
+    
+}
+p{
+    font-size: 24px;
+
+}
+span{
+    font-weight: 600;
+    display: block;
+}
+.title{
+    float:left;
+    height:1150px;
+    width: 25%;
+    background-color:#3691EC;
+
+}
+.content{
+    float:right;
+    width:70%;
+    height:1100px;
+}
+.m{
+    color: #FFF;
+    margin:80px auto;
+    text-align: center;
+}
