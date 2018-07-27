@@ -26,3 +26,10 @@ span{
     margin:80px auto;
     text-align: center;
 }
+.row button{
+    font-size: 15px;
+    color: blue;
+    border-radius: 2px;
+    height: 30px;
+    
+}
