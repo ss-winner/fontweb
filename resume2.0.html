@@ -44,10 +44,20 @@
 </div>
 </div>
 <script>
-     window.alert("您好，面试官");
+     var M;
     function myFunction(){
         console.log("敲代码敲代码敲代码");
     }
+    now = new Date(),hour = now.getHours()
+if(hour < 6){M="凌晨好!"}
+else if (hour < 9){M="早上好!"}
+else if (hour < 12){M="上午好!"}
+else if (hour < 14){M="中午好!"}
+else if (hour < 17){M="下午好!"}
+else if (hour < 19){M="傍晚好!"}
+else if (hour < 22){M="晚上好!"}
+else {M="夜里好!"}
+window.alert("面试官,"+M);
     
 </script>
 </body>
