@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+        var btn = document.getElementById("trans-btn");
+        function dec2bin(decNumber,L) {
+            // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+            if (decNumber < 0) {
+                alert("请输入一个非负整数");
+            }
+            else if (decNumber == 0) {
+                console.log(123);
+                var res = 0;
+                return res;
+                
+            }
+            else {
+                var a = new Array();
+                var i = 0;
+                while (decNumber != 0) {
+                    num = parseInt(decNumber % 2);
+                    decNumber = parseInt(decNumber / 2);
+                    a[i] = num.toString();
+                    i++;
+                }
+                var length = a.length;
+                if(L<=length){
+                var res = a[length - 1];
+                for (i = length - 2; i >= 0; i--)
+                    res = res + a[i];
+                    console.log("输入转化后二进制数字位数不大于本身二进制数字位数");
+                }
+                else {
+                    var res = a[length - 1];
+                for (i = length - 2; i >= 0; i--)
+                    res = res + a[i];
+                    while(L-length>0){
+                        L--;
+                        res=0+res;
+
+                    }
+                }
+                return res;
+            }
+
+        }
+        // 实现当点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+        // Some coding
+        btn.onclick = function () {
+            var L = parseInt(document.getElementById('bin-bit').value);
+            var N = parseInt(document.getElementById('dec-number').value);
+            var decNumber = N;
+            res = dec2bin(decNumber,L);
+
+            document.getElementById("result").innerHTML = res;
+        };
+
+    </script>
+</body>
+
+</html>
