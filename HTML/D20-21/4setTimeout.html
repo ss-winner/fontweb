@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title> New Document </title>
+</head>
+<body>
+    <div id="fade-obj" style="width:300px;height:300px;background:#000;opacity:1;"></div>
+    <button id="fade-btn">淡出</button>
+</body>
+</html>
+<script language="JavaScript" type="text/javascript">
+    var div = document.getElementById("fade-obj");
+    var btn = document.getElementById("fade-btn");
+   
+        
+        function show() {
+            count=div.style.opacity
+            count -= 0.5; 
+            div.style.opacity = count;
+            
+            
+           if(count>=0){
+            btn.disabled = true;
+            setTimeout(show, 500);
+          
+            }
+            else{
+                btn.disabled = false;
+                btn.innerHTML = "淡入";
+            }
+            
+            
+        }
+        function show1() {
+            count=parseFloat(div.style.opacity) ;
+            console.log(count);
+            count =parseFloat(count+0.1); 
+            console.log(count);
+            div.style.opacity = count;
+            console.log(div.style.opacity);
+            
+           if(count<=1){
+            btn.disabled = true;
+            setTimeout(show1, 500);
+            console.log("1");
+
+            }
+            else{
+                btn.disabled = false;
+                btn.innerHTML = "淡出";
+            }
+            
+            
+        }
+    
+    
+    btn.onclick = function () {
+        var m = btn.innerHTML;
+        
+        var div = document.getElementById("fade-obj");
+        if (m == "淡出") {
+            show();
+        }
+        if (m == "淡入") {
+            div.style.opacity=0;
+            show1();
+           
+        }
+    }
+</script>

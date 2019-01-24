@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <style>
+        div {
+            width: 480px;
+            height: 480px;
+            background: url("erik_ce204002.jpg");
+            
+        }
+
+        body {
+            background-color: black;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+
+    </div>
+    <script>
+
+        window.onload = function () {
+
+            var div = document.getElementById("d1");
+            var m = 0;
+           
+            function y() {
+                
+                m += 480;
+                var p = '-' + m + 'px';
+                div.style.backgroundPositionY = p;
+               
+
+            }
+            setInterval(y, 200);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+
+</head>
+<body>
+
+<input id="name" type="text" onkeydown=enter() >    
+<button id="submit-btn">Submit</button>
+<!--在HTML中增加上面的代码，然后通过JavaScript编写如下功能：
+当点击按钮 submit-btn 时，在console中输出 name 中的内容
+在输入过程中，如果按回车键，则同样执行上一条的需求
+在输入过程中，如果按 ESC 键，则把输入框中的内容清空-->
+<script >
+  var btn=document.getElementById("submit-btn");
+  btn.onclick=function(){
+    var input=document.getElementById("name").value;
+    console.log(input);
+  }
+  function enter(){
+    if (event.keyCode == 13)
+    {
+      var input=document.getElementById("name").value;
+    console.log(input);
+    }
+    else if (event.keyCode == 27)
+    {
+      var input=document.getElementById("name");
+      input.value = "";
+      
+    
+    }
+  }
+  </script>
+</body>
+</html>
