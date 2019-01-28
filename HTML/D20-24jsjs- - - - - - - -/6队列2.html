@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input id="queue-input" type="text" />
+        <p id="queue-cont">队列内容：apple-&gt;pear</p>
+
+        <button id="in-btn">入队</button>
+        <button id="out-btn">出队</button>
+        <button id="font-btn">打印队头元素内容</button>
+        <button id="empty-btn">判断队列是否为空</button>
+    </div>
+    <script>
+var p = document.getElementById("queue-cont");
+            var queue = ["apple", "pear"];
+        var div = document.getElementsByTagName("div")[0];
+        div.addEventListener('click', function (e) {
+            var input = document.getElementById("queue-input").value;
+            if (e.target.id == "in-btn") {
+                queue.push(input);
+                var q = queue.join("<-")
+                p.innerHTML = "队列内容：" + q;
+            }
+            if (e.target.id == "out-btn") {
+                queue.pop();
+                var q = queue.join("<-")
+                p.innerHTML = "队列内容：" + q;
+            }
+            if (e.target.id == "font-btn") {
+                p.innerHTML = "队列内容：" + queue.join("<-")+"  "+queue[0];
+            }
+            if (e.target.id == "empty-btn") {
+                if(parseInt(queue.length )>0){
+                    p.innerHTML ="队列不为空"
+                }
+                else{
+                    p.innerHTML ="队列为空"
+                }
+            }
+        })
+        var array1 = [1, 30, 4, 21];
+array1.sort();
+console.log(array1);
+    </script>
+
+</body>
+
+</html>

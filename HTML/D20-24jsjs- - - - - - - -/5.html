@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        // number 1
+       
+        var s='Underpants:6.99'
+        'Socks:5.99'
+        'T-shirt:14.99'
+        'Trousers:31.99'
+        'Shoes:23.99';
+       
+var products=new Array('Underpants:6.99','Socks:5.99','T-shirt:14.99', 'Trousers:31.99','Shoes:23.99');
+
+
+
+var total=0;
+var sub=new Array();
+var n=new Array();
+var price=new Array();
+       for (var i = 0; i <products.length; i++) { // number 2
+            // number 3
+
+sub=products[i].split(':');
+n.push(sub[0]);
+price.push(Number(sub[1]))
+total+=price[i];
+console.log(total);
+var itemText=n[i]+"- $"+price[i]
+console.log(itemText);}
+            // number 4
+
+            // number 5
+         /*   itemText = 0;
+
+            var listItem = document.createElement('li');
+            listItem.textContent = itemText;
+            list.appendChild(listItem);
+        }
+
+        totalBox.textContent = 'Total: $' + total.toFixed(2);
+*/
+    </script>
+</body>
+
+</html>

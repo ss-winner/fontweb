@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var tree = {
+            "id": 0,
+            "name": "root",
+            "left": {
+                "id": 1,
+                "name": "Simon",
+                "left": {
+                    "id": 3,
+                    "name": "Carl",
+                    "left": {
+                        "id": 7,
+                        "name": "Lee",
+                        "left": {
+                            "id": 11,
+                            "name": "Fate"
+                        }
+                    },
+                    "right": {
+                        "id": 8,
+                        "name": "Annie",
+                        "left": {
+                            "id": 12,
+                            "name": "Saber"
+                        }
+                    }
+                },
+                "right": {
+                    "id": 4,
+                    "name": "Tony",
+                    "left": {
+                        "id": 9,
+                        "name": "Candy"
+                    }
+                }
+            },
+            "right": {
+                "id": 2,
+                "name": "right",
+                "left": {
+                    "id": 5,
+                    "name": "Carl",
+                },
+                "right": {
+                    "id": 6,
+                    "name": "Carl",
+                    "right": {
+                        "id": 10,
+                        "name": "Kai"
+                    }
+                }
+            }
+        }
+
+        // 假设id和name均不会重复，根据输入name找到对应的id
+        findIdByName("Candy");
+        console.log(" ");
+function findIdByName(name) {
+    var id;
+    function findName(obj) {
+        if (obj != null) {
+            if (obj.name === name) {
+                id = obj.id;
+                console.log(id);
+            }
+            findName(obj.left);
+            findName(obj.right);
+        }
+    }
+    findName(tree);
+}
+// 假设id和name均不会重复，根据输入id找到对应的name
+findNameById(9);
+console.log(" ");
+function findNameById(id) {
+    var name;
+    function findName(obj) {
+        if (obj != null) {
+            if (obj.id === id) {
+                name = obj.name;
+                console.log(name);
+            }
+            findName(obj.left);
+            findName(obj.right);
+        }
+    }
+    findName(tree);
+   
+}
+// 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
+getListWithDLR();
+console.log(" ");
+function getListWithDLR() {
+    function pretravel(obj){
+       
+        if(obj!=null){//为什么加个等号就不对了
+            console.log(obj.name);
+            pretravel(obj.left);
+            pretravel(obj.right);
+        }
+    }
+    pretravel(tree);
+}
+// 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
+getListWithLDR();
+console.log(" ");
+function getListWithLDR() {
+    function midTravel(obj){
+        if(obj!=null){
+          
+            midTravel(obj.left);
+            console.log(obj.name);
+            midTravel(obj.right);
+        }
+    }
+    midTravel(tree);
+}
+
+// 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
+getListWithLRD();
+console.log(" ");
+function getListWithLRD() {
+    function postTravel(obj){
+        if(obj!=null){
+           
+            postTravel(obj.left);
+            postTravel(obj.right);
+            console.log(obj.name);
+
+        }
+    }
+    postTravel(tree);
+}
+    </script>
+</body>
+
+</html>
