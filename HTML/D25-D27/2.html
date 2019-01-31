@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="p"></p>
+  <p id="p2"></p>
+  <script>
+    // 在页面中显示当前日期及时间，按秒更新
+   
+    var p = document.getElementById("p");
+    var p2 = document.getElementById("p2");
+    var today = new Date();
+    //来根据某个日期返回这一天是星期几
+    function week() {
+      
+      var weekday = new Array(7)
+      weekday[0] = "星期日"
+      weekday[1] = "星期一"
+      weekday[2] = "星期二"
+      weekday[3] = "星期三"
+      weekday[4] = "星期四"
+      weekday[5] = "星期五"
+      weekday[6] = "星期六"
+      
+      m=weekday[today.getDay()];
+      
+      return m;
+      
+    }
+    function weekE() {
+      
+      var weekday = new Array(7)
+      weekday[0] = "Sunday"
+      weekday[1] = "Monday"
+      weekday[2] = "Tuesday"
+      weekday[3] = "Wednesday"
+      weekday[4] = "Thursday"
+      weekday[5] = "Friday"
+      weekday[6] = "Saturday"
+      
+      m=weekday[today.getDay()];
+      
+      return m;
+      
+    }
+    //在页面中显示当前日期及时间，按秒更新 HH:mm:ss
+    function startTime() {
+      var today=new Date();
+      var h = today.getHours()
+      var m = today.getMinutes()
+      var s = today.getSeconds()
+      if(h<12){
+          d="AM";
+
+      }
+      else{
+          d="PM";
+      }
+      //在前面加个0
+      h = checkTime(h);
+      m = checkTime(m);
+      s = checkTime(s);
+      
+      clo=h+":"+m+":"+s;
+      p.innerHTML=GD()+week()+clo;
+      p2.innerHTML=GD2()+weekE()+" "+clo+" "+d;
+      flag = setTimeout("startTime()", 500);
+      
+    }
+    //把月、日、小时等出现个位数的情况前面补充0，补充为两位，比如1变为01
+    function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+    
+    startTime();
+    function GD(){
+      var m=today.getMonth()+1;
+      var d=today.getDate();
+      m=checkTime(m);
+      d=checkTime(d);
+      var gYear=today.getFullYear()+"年"+m+"月"+d+"日";
+      return gYear;
+    }
+    function GD2(){
+      var m=today.getMonth()+1;
+      var d=today.getDate();
+      m=checkTime(m);
+      d=checkTime(d);
+      var gYear=today.getFullYear()+"-"+m+"-"+d+" ";
+      return gYear;
+    }
+    
+    
+
+  </script>
+
+</body>
+
+</html>

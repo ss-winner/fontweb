@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <select id="year-select" onchange="yaerToD(this.value)">
+            <option value="">请选择年</option>
+        </select>
+
+        <select id="month-select" onchange="monthToD(this.value)">
+            <option value="">请选择月</option>
+        </select>
+
+        <select id="day-select">
+            <option value="">请选择日</option>
+        </select>
+
+        <select id="hour-select">
+
+        </select>
+
+        <select id="minite-select">
+
+        </select>
+
+        <select id="second-select">
+
+        </select>
+    </div>
+    <p id="result-wrapper">现在距离
+        2001年1月1日星期六 00:00:00
+        还有 X 天 X 小时 X 分 X 秒</p>
+    <script>
+        var selectM = document.getElementById("month-select");
+        var p = document.getElementById("result-wrapper");
+        var selY = document.getElementById('year-select');
+        var selM = document.getElementById('month-select');
+        var selD = document.getElementById('day-select');
+        var selH = document.getElementById('hour-select');
+        var selMin = document.getElementById('minite-select');
+        var selSec = document.getElementById('second-select');
+        var monthDay = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        //生成year列表
+        for (var i = 2000; i < 2033; i++) {
+            selY.options.add(new Option(i, i));
+            /*var option = document.createElement('option');
+            option.value = i;
+            var txt = document.createTextNode(i);
+            option.appendChild(txt);
+            selY.appendChild(option);*/
+        }
+        //生成month列表
+        for (var i = 1; i < 13; i++) {
+            var option = document.createElement('option');
+            option.value = i;
+            var txt = document.createTextNode(i);
+            option.appendChild(txt);
+            selM.appendChild(option);
+        }
+        //删除所有option
+        function optionsClear(selD) {
+            selD.options.length = 1;
+        }
+        //生成日期列表
+        function makeDay(n) {
+            var obj = document.getElementsByTagName("select")[2];
+            var selectOptions = obj.options;
+            var optionLength = selectOptions.length;
+            for (var i = 0; i < optionLength; i++) {
+                obj.removeChild(selectOptions[0]);
+            }
+                for (var i = 1; i <= n; i++) {
+                    var option = document.createElement('option');
+                    option.value = i;
+                    var txt = document.createTextNode(i);
+                    option.appendChild(txt);
+                    selD.appendChild(option);
+                }
+            
+        }
+            //判断闰年
+            function isPinYear(Y) {
+                if (Y % 4 == 0 && Y % 100 !== 0) {
+                    return true;
+                }
+                else if (Y % 400 == 0) {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            //根据年份选择生成日期
+            
+            function yaerToD() {
+                
+                var valueY=selY.value; 
+                var valueM = selM.value;
+                
+                if (valueM == "") {
+                    var obj = document.getElementsByTagName("select")[2];
+                    var selectOptions = obj.options;
+                    var optionLength = selectOptions.length;
+                    for (var i = 0; i < optionLength; i++) {
+                        obj.removeChild(selectOptions[0]);
+                        return;
+                    }
+                }
+                else if (valueM == 2 && isPinYear(valueY)) {
+
+                    var n = 29;
+                    makeDay(n);
+                }
+                else {
+                    makeDay(monthDay[valueM - 1]);
+                }
+            }
+            //根据月份选择生成日期
+            function monthToD() {
+                if (selM.value == 2 && isPinYear(selY.value)) {
+                    var n = 29;
+                    makeDay(n);
+                    console.log(1);
+
+                }
+                else {
+                    makeDay(monthDay[selM.value - 1]);
+                }
+            }
+            function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+            //生成hour列表
+            for (var i = 0; i < 24; i++) {
+                i=checkTime(i);
+                var option = document.createElement('option');
+                option.value = i;
+                var txt = document.createTextNode(i);
+                option.appendChild(txt);
+                selH.appendChild(option);
+            }
+            //生成Minu列表
+            for (var i = 0; i < 60; i++) {
+                i=checkTime(i);
+                var option = document.createElement('option');
+                option.value = i;
+                var txt = document.createTextNode(i);
+                option.appendChild(txt);
+                selMin.appendChild(option);
+            }
+            //生成second列表
+            for (var i = 0; i < 60; i++) {
+                i=checkTime(i);
+                var option = document.createElement('option');
+                option.value = i;
+                var txt = document.createTextNode(i);
+                option.appendChild(txt);
+                selSec.appendChild(option);
+            }
+            function week(myDate) {
+
+                var weekday = new Array(7)
+                weekday[0] = "星期日"
+                weekday[1] = "星期一"
+                weekday[2] = "星期二"
+                weekday[3] = "星期三"
+                weekday[4] = "星期四"
+                weekday[5] = "星期五"
+                weekday[6] = "星期六"
+
+                m = weekday[myDate.getDay()];
+
+                return m;
+
+            }
+        function selTime() {
+                var myDate = new Date();
+                myDate.setFullYear(selY.value, selM.value, selD.value);
+                var m = selY.value + "年" + selM.value + "月" + selD.value + "日" + week(myDate) + selH.value + ":" + selMin.value + ":" + selSec.value;
+                return m;
+            }
+            function countTime() {
+                var timeSelectStr = selY.value + "/" + selM.value + "/" + selD.value + " " + selH.value + ":" + selMin.value +
+                    ":" + selSec.value;
+                var timeSelect = new Date(timeSelectStr);
+                var nowD = timeSelect.getTime();
+                var today = new Date();
+                if (today.getTime() >= nowD) {
+                    var my_time = today.getTime() - nowD;
+                    return "已经过去" + getDuration(my_time);
+                    //已经过去
+                }
+                else {
+                    var my_time = nowD - today.getTime();
+                    return "还有" + getDuration(my_time);
+                    //还有
+                }
+            }
+            function getDuration(my_time) {
+                
+                var days = parseInt(my_time / 86400000);
+                var hours = parseInt((my_time % 86400000) / 3600000);
+                var minutes = parseInt(((my_time % 86400000) % 3600000) / 60000);
+                var seconds = parseInt((((my_time % 86400000) % 3600000) % 60000) / 1000);
+                var time = days + '天' + hours + '小时' + minutes + '分' + seconds + '秒';
+                return time;
+            }
+        
+            function start() {
+                p.innerHTML = "现在距离" + selTime() + countTime();
+            }
+            setInterval("start()", 500);
+        </script>
+    </body>
+
+</html>

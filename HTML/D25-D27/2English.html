@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="p"></p>
+  <script>
+    //输出格式变为：2008-10-10 Monday 07:10:30 PM
+   
+    var p = document.getElementById("p");
+    
+    var today = new Date();
+    //来根据某个日期返回这一天是星期几
+    
+    function week() {
+      
+      var weekday = new Array(7)
+      weekday[0] = "Sunday"
+      weekday[1] = "Monday"
+      weekday[2] = "Tuesday"
+      weekday[3] = "Wednesday"
+      weekday[4] = "Thursday"
+      weekday[5] = "Friday"
+      weekday[6] = "Saturday"
+      
+      m=weekday[today.getDay()];
+      
+      return m;
+      
+    }
+    //在页面中显示当前日期及时间，按秒更新 HH:mm:ss
+    function startTime() {
+      var today=new Date();
+      var h = today.getHours()
+      var m = today.getMinutes()
+      var s = today.getSeconds()
+      if(h<12){
+          d="AM";
+
+      }
+      else{
+          d="PM";
+      }
+      //在前面加个0
+      h = checkTime(h);
+      m = checkTime(m);
+      s = checkTime(s);
+      
+      clo=h+":"+m+":"+s;
+      
+      p.innerHTML=GD()+week()+" "+clo+" "+d;
+      flag = setTimeout("startTime()", 500);
+      
+    }
+    //把月、日、小时等出现个位数的情况前面补充0，补充为两位，比如1变为01
+    function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+    
+    startTime();
+    function GD(){
+      var m=today.getMonth()+1;
+      var d=today.getDate();
+      m=checkTime(m);
+      d=checkTime(d);
+      var gYear=today.getFullYear()+"-"+m+"-"+d+" ";
+      return gYear;
+    }
+    //输出格式变为：2008-10-10 Monday 07:10:30 PM
+    
+
+  </script>
+
+</body>
+
+</html>
