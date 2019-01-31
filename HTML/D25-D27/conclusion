@@ -1,0 +1,16 @@
+现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒
+1、注意功能分离，一个功能一个函数，否则容易出错
+2、给select里添加新的option
+for (var i = 2000; i < 2033; i++) {
+            selY.options.add(new Option(i, i));
+}
+3、删除所有option
+        function optionsClear(selD) {
+            selD.options.length = 1;
+        }
+4、取select 里option的value
+<select id="year-select" onchange="yaerToD(this.value)">
+            <option value="">请选择年</option>
+        </select>
+var selY = document.getElementById('year-select');
+取这个选择框选项的value ：selY.value
