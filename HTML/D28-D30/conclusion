@@ -1,0 +1,8 @@
+1、转义 反转义还是没搞懂
+2、nowSelectTipIndex设计比较方便科学简洁
+3、知道了 if(event.keyCode==27){
+                input.select();
+            }
+            select()可以全选input框里的内容
+            用了两三天？？
+            
