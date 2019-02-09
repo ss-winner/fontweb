@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #table-wrapper{
+            display: none;
+                    }
+    </style>
+</head>
+<body>
+    <div id="checkbox">
+    <div id="region-select">
+            <input type="checkbox" class="areaqx" onclick="quanxuan('area')" />全选<br />
+            <input type="checkbox" class="areaqx" value="华东" onclick="danji('area',1)"/>华东<br />
+            <input type="checkbox" class="areaqx" value="华南" onclick="danji('area',2)" />华南<br />
+            <input type="checkbox" class="areaqx" value="华北" onclick="danji('area',3)"/>华北<br />
+    </div>
+    <div id="product-select">
+            <input type="checkbox" class="productqx" onclick="quanxuan('product')" />全选<br />
+            <input type="checkbox" class="productqx" value="手机" onclick="danji('product',1)"/>手机<br />
+            <input type="checkbox" class="productqx" value="笔记本" onclick="danji('product',2)"/>笔记本<br />
+            <input type="checkbox" class="productqx" value="智能音箱" onclick="danji('product',3)"/>智能音箱<br />
+    </div>
+</div>
+    <div id="table-wrapper">
+            <table id="table1">
+                    <tr>
+                    <th>商品</th>
+                    <th>地区</th>
+                    <th>1月</th>
+                    <th>2月</th>
+                    <th>3月</th>
+                    <th>4月</th>
+                    <th>5月</th>
+                    <th>6月</th>
+                    <th>7月</th>
+                    <th>8月</th>
+                    <th>9月</th>
+                    <th>10月</th>
+                    <th>11月</th>
+                    <th>12月</th>
+                    </tr>
+                    
+            </table>
+    </div>
+    <script type="text/javascript" src="checkbox.js"></script>
+    <script type="text/javascript" src="table.js "></script>
+    </body>
+    </html>
+    
